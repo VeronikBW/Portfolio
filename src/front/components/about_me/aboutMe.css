@@ -1,0 +1,39 @@
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* movil */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-image {
+    width: 150px;
+    height: 150px;
+    order: -1;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}

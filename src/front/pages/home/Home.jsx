@@ -1,8 +1,15 @@
 import { AboutMe } from "../../components/about_me/AboutMe"
+import "./home.css"
+
+
 export const Home = () => {
 	return (
 		<>
-			<AboutMe />
+			<div className="container">
+				<div className="container home-card">
+					<AboutMe />
+				</div>
+			</div>
 		</>
 	)
 
