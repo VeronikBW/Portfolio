@@ -74,7 +74,7 @@ export const Home = () => {
 				<div className="d-flex flex-wrap justify-content-center gap-4">
 					{profile.languages.map((lang, idx) => (
 						<div key={idx} className="glass px-4 py-3 shadow-sm d-flex align-items-center gap-3">
-							<div className="bg-primary-glow text-primary rounded-circle d-flex justify-content-center align-items-center" style={{width: "40px", height: "40px"}}>
+							<div className="bg-primary-glow text-primary rounded-circle d-flex justify-content-center align-items-center" style={{ width: "40px", height: "40px" }}>
 								<i className="fas fa-language fs-5"></i>
 							</div>
 							<div>
@@ -179,9 +179,9 @@ export const Home = () => {
 							<p className="text-muted mb-5">
 								{ui.contact.desc}
 							</p>
-							
+
 							<div className="d-flex align-items-center mb-4">
-								<div className="bg-primary-glow text-primary rounded-circle d-flex justify-content-center align-items-center me-3" style={{width: "45px", height: "45px"}}>
+								<div className="bg-primary-glow text-primary rounded-circle d-flex justify-content-center align-items-center me-3" style={{ width: "45px", height: "45px" }}>
 									<i className="fas fa-envelope"></i>
 								</div>
 								<div>
@@ -191,7 +191,7 @@ export const Home = () => {
 							</div>
 
 							<div className="d-flex align-items-center">
-								<div className="bg-primary-glow text-primary rounded-circle d-flex justify-content-center align-items-center me-3" style={{width: "45px", height: "45px"}}>
+								<div className="bg-primary-glow text-primary rounded-circle d-flex justify-content-center align-items-center me-3" style={{ width: "45px", height: "45px" }}>
 									<i className="fas fa-map-marker-alt"></i>
 								</div>
 								<div>
@@ -207,7 +207,7 @@ export const Home = () => {
 						<div className="glass p-5 h-100">
 							{status === "success" ? (
 								<div className="d-flex flex-column align-items-center justify-content-center h-100 text-center">
-									<div className="bg-success text-white rounded-circle d-flex justify-content-center align-items-center mb-4" style={{width: "80px", height: "80px", fontSize: "2rem"}}>
+									<div className="bg-success text-white rounded-circle d-flex justify-content-center align-items-center mb-4" style={{ width: "80px", height: "80px", fontSize: "2rem" }}>
 										<i className="fas fa-check"></i>
 									</div>
 									<h3 className="h4 fw-bold">{ui.contact.successTitle}</h3>
@@ -237,8 +237,8 @@ export const Home = () => {
 										<textarea className="glass-input" id="message" name="message" value={formData.message} onChange={handleChange} rows="4" placeholder={ui.contact.formMsgPh} required></textarea>
 									</div>
 									<button type="submit" className="btn-primary w-100 d-flex justify-content-center align-items-center gap-2" disabled={status === "loading"}>
-										{status === "loading" ? ui.contact.sendingBtn : ui.contact.sendBtn} 
-										{!status === "loading" && <i className="fas fa-paper-plane"></i>}
+										{status === "loading" ? ui.contact.sendingBtn : ui.contact.sendBtn}
+										{status !== "loading" && <i className="fas fa-paper-plane"></i>}
 									</button>
 								</form>
 							)}
