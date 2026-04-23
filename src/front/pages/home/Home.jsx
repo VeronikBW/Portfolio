@@ -6,6 +6,7 @@ export const Home = () => {
 	const { store } = useGlobalReducer();
 	const content = store.content[store.language] || store.content["es"];
 	const { profile, projects, experience, education, ui } = content;
+	const apiBaseUrl = (import.meta.env.VITE_BACKEND_URL || "").replace(/\/$/, "");
 
 	const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 	const [status, setStatus] = useState("idle"); // idle, loading, success, error
@@ -16,7 +17,7 @@ export const Home = () => {
 		e.preventDefault();
 		setStatus("loading");
 		try {
-			const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/contact", {
+			const response = await fetch(`${apiBaseUrl}/api/contact`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(formData)
