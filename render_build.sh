@@ -5,4 +5,8 @@ set -o errexit
 npm install
 npm run build
 
-pipenv install --deploy --ignore-pipfile
+pip install pipenv
+
+pipenv install
+
+pipenv run upgrade
