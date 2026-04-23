@@ -93,7 +93,11 @@ export const Home = () => {
 					{projects.map((project) => (
 						<div key={project.id} className="col-md-12">
 							<div className="project-card glass d-flex flex-column flex-lg-row overflow-hidden h-100">
-								<img src={project.image} alt={project.title} className="project-image-full" />
+								<img
+									src={project.image}
+									alt={project.title}
+									className={`project-image-full ${project.imageFit === "contain" ? "project-image-contained" : ""}`.trim()}
+								/>
 								<div className="p-5">
 									<div className="d-flex justify-content-between align-items-start mb-3">
 										<h3 className="h2 mb-0">{project.title}</h3>
